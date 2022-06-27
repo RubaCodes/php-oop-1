@@ -53,22 +53,23 @@ $movies[1]->actors = ['Sergio Bini', 'Giorgio Cantarini', 'Roberto Benigni'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>OOP test</title>
 </head>
 
 <body>
-    <main>
+    <main class="library">
         <?php foreach ($movies as $movie) { ?>
-            <div>
-                <h1><?php echo $movie->titleGetter() ?></h1>
-                <h3><?php echo $movie->originLanguageGetter() ?></h3>
-                <h4>Attori principali:</h4>
+            <div class="card">
+                <h1 class="text-center"><?php echo $movie->titleGetter() ?></h1>
+                <h3 class="text-center"><?php echo $movie->originLanguageGetter() ?></h3>
+                <h4 class="text-center">Attori principali</h4>
                 <ul>
                     <?php foreach ($movie->actors as $actor) { ?>
                         <li><?php echo $actor ?></li>
                     <?php } ?>
                 </ul>
-                <h4>Generi:</h4>
+                <h4 class="text-center">Generi</h4>
                 <ul>
                     <?php foreach ($movie->genres as $genre) { ?>
                         <li><?php echo $genre ?></li>
