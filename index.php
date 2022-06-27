@@ -40,8 +40,8 @@ $movies[] = new Movie("La Vita e' Bella", "Italiano");
 $movies[0]->genres = ['Avventura', 'Famiglia', 'Fiction'];
 $movies[1]->genres = ['Drammatica', 'Guerra', 'Romantico'];
 
-$movies[0]->authors = ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'];
-$movies[1]->authors = ['Sergio Bini', 'Giorgio Cantarini', 'Roberto Benigni'];
+$movies[0]->actors = ['Daniel Radcliffe', 'Emma Watson', 'Rupert Grint'];
+$movies[1]->actors = ['Sergio Bini', 'Giorgio Cantarini', 'Roberto Benigni'];
 
 
 
@@ -57,12 +57,26 @@ $movies[1]->authors = ['Sergio Bini', 'Giorgio Cantarini', 'Roberto Benigni'];
 </head>
 
 <body>
-
-    <pre>
-    <?php
-    var_dump($movies);
-    ?>
-</pre>
+    <main>
+        <?php foreach ($movies as $movie) { ?>
+            <div>
+                <h1><?php echo $movie->titleGetter() ?></h1>
+                <h3><?php echo $movie->originLanguageGetter() ?></h3>
+                <h4>Attori principali:</h4>
+                <ul>
+                    <?php foreach ($movie->actors as $actor) { ?>
+                        <li><?php echo $actor ?></li>
+                    <?php } ?>
+                </ul>
+                <h4>Generi:</h4>
+                <ul>
+                    <?php foreach ($movie->genres as $genre) { ?>
+                        <li><?php echo $genre ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        <?php } ?>
+    </main>
 </body>
 
 </html>
